@@ -1,10 +1,12 @@
 import StyledButton, { FancyButton, SubmitButton } from './components/Button/Button';
+import img from './assets/spinner.png';
 import './App.css';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg">
+      <img src={img} className='App-logo' alt='logo-img' />
       {/* <button className='button'>Click Me</button> */}
       <StyledButton type='submit'>Styled Button</StyledButton>
       <div>

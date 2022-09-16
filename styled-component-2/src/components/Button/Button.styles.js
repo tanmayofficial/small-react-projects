@@ -80,7 +80,7 @@ export const StyledButton = styled.button`
   }
 `;
 export const FancyButton = styled(StyledButton)`
-  background-image: linear-gradient(to right, #f6d365 10%, #fdbeae 10%);
+  /* background-image: linear-gradient(to right, #f6d365 10%, #fdbeae 10%); */
   border: none;
   border-radius: 10px;
 `;
@@ -88,7 +88,7 @@ export const FancyButton = styled(StyledButton)`
 export const SubmitButton = styled(StyledButton).attrs((props)=>({
   type: "submit",
 }))`
-box-shadow: 0 9px #999;
+/* box-shadow: 0 9px #999; */
   &:active {
     background-color: ${(props) =>
       props.variant !== "outline" ? "#FFF" : "palevioletred"};
@@ -96,3 +96,4 @@ box-shadow: 0 9px #999;
     transform: translateY(4px);
   }
 `;
+
