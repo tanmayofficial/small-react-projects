@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   /* display: inline-block;
-  background-color: ${(props) => props.variant === 'outline' ? '#FFF' : 'palevioletred'};
-  color: ${(props) => props.variant === 'outline' ? 'palevioletred' : '#fff'};
+  background-color: ${(props) =>
+    props.variant === "outline" ? "#FFF" : "palevioletred"};
+  color: ${(props) => (props.variant === "outline" ? "palevioletred" : "#fff")};
   font-size: 1.5em;
   margin: 1em;
   padding: 1em;
@@ -32,58 +33,66 @@ export const StyledButton = styled.button`
   -webkit-user-select: none;
   touch-action: manipulation;
 
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all 0.4s;
+  }
 
-&::after,
-&::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all .4s;
-}
+  &::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+  }
 
-&::before {
-  transform: translate(0%, 0%);
-  width: 100%;
-  height: 100%;
-  background: #28282d;
-  border-radius: 10px;
-}
+  &::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+  }
 
-&::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
-  background: #ffffff15;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 50px;
-}
+  &:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
 
-&:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
-}
+  &:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
 
-&:hover::after {
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-&:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
-}
-`
+  &:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+`;
 export const FancyButton = styled(StyledButton)`
   background-image: linear-gradient(to right, #f6d365 10%, #fdbeae 10%);
   border: none;
   border-radius: 10px;
-`
+`;
 
-
-
+export const SubmitButton = styled(StyledButton).attrs((props)=>({
+  type: "submit",
+}))`
+box-shadow: 0 9px #999;
+  &:active {
+    background-color: ${(props) =>
+      props.variant !== "outline" ? "#FFF" : "palevioletred"};
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+`;
