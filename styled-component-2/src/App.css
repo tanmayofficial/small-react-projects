@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .bg {
@@ -31,10 +35,16 @@
 
 .App-logo {
   height: 15vmin;
-  pointer-events: none;
   background: transparent;
 }
 
+.App-logo-reverse{
+  height: 85vmin;
+  background: transparent;
+  mix-blend-mode: difference;
+  position: absolute;
+
+}
 
 .App-logo::after {
   content: "";
@@ -58,6 +68,11 @@
     animation: App-logo-spin infinite 3s linear;
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo-reverse {
+    animation: App-logo-spin-reverse infinite 3s linear;
+  }
+}
 
 @keyframes AnimateBG { 
   0%{background-position:0% 50%}
@@ -71,5 +86,13 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes App-logo-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

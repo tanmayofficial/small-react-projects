@@ -17,14 +17,14 @@ export const StyledButton = styled.button`
   all: unset;
   width: 100px;
   height: 30px;
-  font-size: 16px;
+  font-size: 22px;
   background: transparent;
   border: none;
   position: relative;
   color: #f0f0f0;
   cursor: pointer;
   z-index: 1;
-  padding: 10px 20px;
+  padding: 15px 28px;
   display: flex;
   align-items: center;
   justify-content: center;
