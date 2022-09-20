@@ -1,0 +1,1 @@
+export const hostId = "spotify23.p.rapidapi.com";
